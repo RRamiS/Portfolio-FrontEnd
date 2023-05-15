@@ -1,0 +1,47 @@
+
+<!-- Experiencia -->
+
+<section id="experiencia" class="py-5" style="background-color: #9BA4B5;">
+  <div class="row">
+
+    <h1>Hard & Soft skills</h1>
+    <br>
+    <div class="col-lg-2">
+        <button type="button" routerLink="/newskill" class="btn btn-dark" *ngIf="isLogged">Nueva Skill</button>
+    </div>
+    <hr>
+
+    <div class="text-center col-sm-4 col-md-4 col-lg-4 circulo" style="border: 2px solid black; margin-right: 110px; margin-bottom: 15px; margin-left: 110px;" *ngFor="let skill of skill">
+        <circle-progress
+        [percent]="(skill.porcentaje)"
+        [radius]="90" [imageSrc]="''"
+        [title]="(skill.nombre)"
+        [titleColor]="'#212F3C'"
+        [showTitle]="true"
+        [showImage]="false"
+        [imageHeight]="70"
+        [imageWidth]="70"
+        [showUnits]="false"
+        [showSubtitle]="false"
+        [outerStrokeWidth]="16"
+        [innerStrokeWidth]="2"
+        [outerStrokeColor]="'#78C000'"
+        [innerStrokeColor]="'#C7E596'"
+        [animation]="true"
+        [animationDuration]="600">
+        </circle-progress>
+
+        <div>
+            <td *ngIf="isLogged" >
+                <button class="btn btn-light" style="margin-bottom: 15px;" routerLink="/editskill/{{skill.id}}">
+                    <i class="bi bi-pencil-fill">Editar</i></button>
+            </td>
+            <td *ngIf="isLogged">
+                <button class="btn btn-danger" style="margin-bottom: 15px;" (click)="delete(skill.id)">
+                    <i class="bi bi-trash-fill">Eliminar</i></button>
+            </td>
+        </div>
+
+    </div>
+</div>
+</section>
