@@ -11,7 +11,7 @@ import { NuevoUsuario } from '../model/nuevo-usuario';
 })
 export class AuthService {
 
-  authURL = 'https://backendportfolio.herokuapp.com/auth/';
+  authURL = 'https://backend-portfolio-tp5h.onrender.com/auth/';
 
   //URL = environment.URL + 'auth/';
 
